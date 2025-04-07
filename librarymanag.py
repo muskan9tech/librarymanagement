@@ -19,9 +19,22 @@ frstname=input("Enter student firstname: ")
 lastname=input("Enter student lastname: ")    
 rolln=int(input("Enter student rollno. : ")) 
 bookname=input("Enter bookname: ")     
-purpose=input("Do you wanna issue/return the book?")  
-dateissue=(input("Enter date of issued: "))
-datereturn=(input("Enter date of return: "))
+i=0
+purpose=input("Do you wanna issue/return the book?") 
+while((purpose!="issue") or (purpose!="return")):  
+    if(purpose=="issue"):
+      dateissue=(input("Enter date of issued: "))
+      datereturn=(input("Enter date of return: "))
+      break
+    elif(purpose=="return"):
+      dateissue=(input("Enter date of issued: ")) 
+      datereturn=(input("Enter date of return: "))
+      break
+    else:
+       print("Enter correct input!")
+       purpose=input("Do you wanna issue/return the book?") 
+i+=1    
+     
 obj=Library(frstname,lastname,rolln) 
 obj.book(bookname)   
 obj.purpose(purpose)
